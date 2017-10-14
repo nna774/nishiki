@@ -20,6 +20,7 @@ int main(int argc, char* argv[]) {
   while (ent = readdir(dirp), ent != NULL) {
     names.push_back(ent->d_name);
   }
+  closedir(dirp);
   std::sort(begin(names), end(names));
 
   for(auto const &e: names) {
